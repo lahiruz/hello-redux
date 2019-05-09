@@ -1,23 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import logo from './logo.svg';
+import {Hello} from "./Hello";
+import logo from './images/react-redux.svg';
 
-function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo"/>
-				<p> Edit <code>src/App.js</code> and save to reload. </p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
+class App extends Component {
+	state = {
+		tech: 'Redux'
+	};
+
+	render() {
+		return (
+			<div className="app">
+				<header className="app-header">
+					<img className="app-logo" src={logo} alt="logo"/>
+					<Hello tech={this.state.tech}/>
+					<a className="app-tech-link"
+					   href="https://redux.js.org"
+					   target="_blank"
+					   rel="noopener noreferrer">
+						Learn Redux
+					</a>
+				</header>
+			</div>
+		);
+	}
 }
 
 export default App;
