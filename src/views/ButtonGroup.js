@@ -1,4 +1,7 @@
 import React from 'react';
+
+import {setTechnology, store} from '../store';
+
 import './ButtonGroup.css';
 
 export function ButtonGroup(props) {
@@ -8,10 +11,16 @@ export function ButtonGroup(props) {
 				<button
 					data-tech={tech}
 					key={`btn-${index}`}
-					className="btn-tech">
+					className="btn-tech"
+					onClick={dispatchTechnology}>
 					{tech}
 				</button>
 			))}
 		</div>
-	)
+	);
+}
+
+function dispatchTechnology(e) {
+	const tech = e.target.dataset.tech;
+	store.dispatch(setTechnology(tech));
 }

@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 
 import {Hello} from './views/Hello';
-import {ButtonGroup} from "./views/ButtonGroup";
+import {ButtonGroup} from './views/ButtonGroup';
+
+import {store} from './store';
+
 import logo from './images/react-redux.svg';
+
 import './App.css';
-import {store} from "./store";
 
 class App extends Component {
 	render() {

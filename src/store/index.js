@@ -1,5 +1,11 @@
-import {createStore} from "redux";
-import {reducer} from "../reducers";
+import {createStore} from 'redux';
 
-const initialState = { tech: 'Redux'};
+import {reducer} from '../reducers';
+
+const initialState = {tech: 'Redux'};
 export const store = createStore(reducer, initialState);
+
+export function setTechnology(tech) {
+	return { type: 'SET_TECHNOLOGY', tech}
+}
+
